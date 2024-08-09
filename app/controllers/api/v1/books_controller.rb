@@ -5,6 +5,7 @@ class Api::V1::BooksController < ApplicationController
 
   # GET /books
   def index
+    @books = Book.search(params[:q], fields: Book::FIELDS_TO_SEARCH) if params[:q].present?
     render json: @books
   end
 

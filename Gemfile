@@ -13,6 +13,10 @@ gem 'devise', '~> 4.9'
 gem 'devise-argon2', '~> 2.0'
 gem 'devise-jwt', '~> 0.12.1'
 gem 'tzinfo-data', platforms: %i[windows jruby]
+gem "searchkick"
+gem "sidekiq", "~> 7.3"
+gem "opensearch-ruby" # select one
+gem 'redis', '~> 5.2'
 # gem "rack-cors"
 
 group :development, :test do
@@ -26,9 +30,6 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'rubocop-rspec_rails'
-end
-
-group :development do
 end
 
 group :test do
