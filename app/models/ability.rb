@@ -11,9 +11,15 @@ class Ability
     if user.librarian?
       can :manage, Book
       can :manage, Borrow
-    else
+      can :total_books, :dashboard
+      can :total_borrowed_books, :dashboard
+      can :books_due_today, :dashboard
+      can :overdue_books, :dashboard
+    elsif user.member?
       can :index, Book
       can :index, Borrow, user_id: user.id
+      can :books_borrowed, :dashboard
+      can :due_dates, :dashboard
     end
   end
 end

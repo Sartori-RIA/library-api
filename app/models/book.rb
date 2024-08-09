@@ -7,4 +7,6 @@ class Book < ApplicationRecord
 
   validates :title, :author, :genre, :isbn, :total_copies, presence: true
   validates :total_copies, numericality: { only_integer: true, greater_than: 0 }
+
+  has_many :borrows, dependent: :restrict_with_error
 end

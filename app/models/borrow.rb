@@ -9,6 +9,21 @@ class Borrow < ApplicationRecord
   validate :check_availability?, on: :create
   validate :check_already_borrowed?, on: :create
 
+  scope :due_today, -> { where(end_date: DateTime.now.all_day).order(end_date: :desc, expired: :desc) }
+
+  scope :overdue, -> { where(returned: false, expired: false) }
+
+  scope :librarian_due_dates, lambda {
+    where('end_date >= ? OR (expired = TRUE AND returned = FALSE)', DateTime.now.beginning_of_day)
+      .order(end_date: :desc, expired: :desc)
+  }
+
+  scope :member_due_dates, lambda { |user_id|
+    where(user_id:).where.not(end_date: today.beginning_of_day).order(end_date: :desc, expired: :desc)
+  }
+
+  scope :total_borrowed, -> { where(returned: false).count }
+
   private
 
   def set_end_date

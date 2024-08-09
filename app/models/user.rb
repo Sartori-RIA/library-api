@@ -12,4 +12,7 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   enum role: { member: 0, librarian: 1 }, _default: 0
+
+  has_many :borrows, dependent: :restrict_with_error
+  has_many :books, through: :borrows
 end

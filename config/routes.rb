@@ -12,8 +12,16 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :books
       resources :borrows, except: [:destroy]
+      resources :dashboard, only: [] do
+        collection do
+          get :total_books
+          get :total_borrowed_books
+          get :books_due_today
+          get :overdue_books
+          get :due_dates
+          get :books_borrowed
+        end
+      end
     end
   end
-  # Defines the root path route ("/")
-  # root "posts#index"
 end
