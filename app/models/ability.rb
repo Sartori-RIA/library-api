@@ -10,8 +10,10 @@ class Ability
     can :manage, User, id: user.id
     if user.librarian?
       can :manage, Book
+      can :manage, Borrow
     else
       can :index, Book
+      can :index, Borrow, user_id: user.id
     end
   end
 end
