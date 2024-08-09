@@ -17,7 +17,10 @@ gem "searchkick"
 gem "sidekiq", "~> 7.3"
 gem "opensearch-ruby" # select one
 gem 'redis', '~> 5.2'
-# gem "rack-cors"
+gem "rack-cors"
+gem 'rack-attack'
+gem "devise-i18n", "~> 1.12"
+gem "rails-i18n", "~> 7.0"
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
@@ -39,3 +42,5 @@ group :test do
   gem 'simplecov'
   gem 'simplecov-console'
 end
+
+
