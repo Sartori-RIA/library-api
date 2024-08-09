@@ -1,0 +1,17 @@
+Rails:
+  Enabled: true
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-factory_bot
+
+AllCops:
+  TargetRubyVersion: 3.2.2
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: true
