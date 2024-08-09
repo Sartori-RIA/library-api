@@ -35,11 +35,6 @@ class Api::V1::BorrowsController < ApplicationController
     end
   end
 
-  # DELETE /borrows/1
-  def destroy
-    @borrow.destroy!
-  end
-
   private
 
   def set_borrow
