@@ -7,8 +7,8 @@ ruby '3.2.2'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
-# gem "jbuilder"
 gem 'bootsnap', require: false
+gem 'cancancan'
 gem 'devise', '~> 4.9'
 gem 'devise-argon2', '~> 2.0'
 gem 'devise-jwt', '~> 0.12.1'

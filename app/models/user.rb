@@ -8,4 +8,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :argon2,
          :jwt_authenticatable, jwt_revocation_strategy: self
+
+  validates :name, presence: true
+
+  enum role: { member: 0, librarian: 1 }, _default: 0
 end
