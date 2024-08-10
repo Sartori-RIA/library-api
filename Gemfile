@@ -44,3 +44,7 @@ group :test do
   gem 'simplecov'
   gem 'simplecov-console'
 end
+
+gem "apipie-rails", "~> 1.4"
+
+gem "pagy", "~> 9.0"

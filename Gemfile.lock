@@ -76,6 +76,9 @@ GEM
       mutex_m
       tzinfo (~> 2.0)
     ansi (1.5.0)
+    apipie-rails (1.4.2)
+      actionpack (>= 5.0)
+      activesupport (>= 5.0)
     argon2 (2.3.0)
       ffi (~> 1.15)
       ffi-compiler (~> 1.0)
@@ -210,6 +213,7 @@ GEM
       faraday (>= 1.0, < 3)
       multi_json (>= 1.0)
     orm_adapter (0.5.0)
+    pagy (9.0.5)
     parallel (1.25.1)
     parallel_tests (4.7.1)
       parallel
@@ -378,6 +382,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  apipie-rails (~> 1.4)
   bootsnap
   cancancan
   database_cleaner
@@ -392,6 +397,7 @@ DEPENDENCIES
   faker
   fuubar
   opensearch-ruby
+  pagy (~> 9.0)
   parallel_tests
   pg (~> 1.1)
   puma (>= 5.0)
