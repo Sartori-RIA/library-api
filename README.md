@@ -12,6 +12,11 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+  * docker exec library_app bundle exec rails db:create
+  * docker exec library_app bundle exec rails db:migrate
+  * docker exec library_app bundle exec rails db:seed
+  * docker exec library_app bundle exec rails db:populate
+
 
 * Database initialization
 

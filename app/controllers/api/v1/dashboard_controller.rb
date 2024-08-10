@@ -9,28 +9,24 @@ class Api::V1::DashboardController < ApplicationController
     render json: { total: @total }, status: :ok
   end
 
-  # only librarian
   def total_borrowed_books
     authorize! :total_borrowed_books, :dashboard
     @total = Book.total_borrowed
     render json: { total: @total }, status: :ok
   end
 
-  # only librarian
   def books_due_today
     authorize! :books_due_today, :dashboard
     @borrows = Borrow.due_today
     render json: @borrows, status: :ok
   end
 
-  # only librarian
   def overdue_books
     authorize! :overdue_books, :dashboard
     @borrows = Borrow.overdue
     render json: @borrows, status: :ok
   end
 
-  # both
   def due_dates
     authorize! :due_dates, :dashboard
     @borrows = if current_user.librarian?
@@ -41,7 +37,6 @@ class Api::V1::DashboardController < ApplicationController
     render json: @borrows
   end
 
-  # member
   def books_borrowed
     authorize! :books_borrowed, :dashboard
     @books = current_user.books

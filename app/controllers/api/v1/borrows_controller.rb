@@ -46,6 +46,6 @@ class Api::V1::BorrowsController < ApplicationController
   end
 
   def update_params
-    params.require(:borrow).permit(:book_id, :user_id, :returned)
+    params.require(:borrow).permit(:returned)
   end
 end

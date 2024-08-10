@@ -1,0 +1,36 @@
+GET http://localhost:3000/api/v1/borrows
+Accept: application/json
+Authorization: Bearer {token}
+
+###
+
+GET http://localhost:3000/api/v1/borrows/1
+Accept: application/json
+Authorization: Bearer {token}
+
+###
+
+POST http://localhost:3000/api/v1/borrows
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+{
+  "borrow": {
+    "user_id": 1,
+    "book_id": 1
+  }
+}
+
+###
+
+PATCH http://localhost:3000/api/v1/borrows/1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+{
+  "borrow": {
+    "returned": true,
+  }
+}

@@ -31,7 +31,7 @@ class Borrow < ApplicationRecord
   end
 
   def check_availability?
-    copies = book.total_copies
+    copies = book&.total_copies
     not_available = Borrow.joins(:book).where(book:, returned: false).count
     copies > not_available
   end

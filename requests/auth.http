@@ -1,0 +1,32 @@
+POST http://localhost:3000/users/sign_in
+Content-Type: application/json
+Accept: application/json
+
+{
+  "user": {
+    "email": "test1@email.com",
+    "password": "123456"
+  }
+}
+
+###
+
+DELETE http://localhost:3000/users/sign_out
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNTMiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMyNTIyNjEsImV4cCI6MTcyMzMzODY2MSwianRpIjoiY2M3NjZlNzktMzgxMi00MzJiLTk2NTgtZDliNjkxYzY1MGJlIn0.21ZoghWdkDBdhxIJTaBfqQncmgzqKsbjCBjBN7nwj64
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+Accept: application/json
+
+
+{
+  "user": {
+    "email": "test1@email.com",
+    "password": "123456",
+    "name": "example user"
+  }
+}

@@ -1,0 +1,35 @@
+GET http://localhost:3000/api/v1/dasboard/total_books
+Accept: application/json
+Authorization: Bearer {token}
+
+###
+
+GET http://localhost:3000/api/v1/dashboard/total_borrowed_books
+Accept: application/json
+Authorization: Bearer {token}
+
+###
+
+GET http://localhost:3000/api/v1/dashboard/books_due_today
+Accept: application/json
+Authorization: Bearer {token}
+
+###
+
+GET http://localhost:3000/api/v1/dashboard/overdue_books
+Accept: application/json
+Authorization: Bearer {token}
+
+###
+
+GET http://localhost:3000/api/v1/dashboard/due_dates
+Accept: application/json
+Authorization: Bearer {token}
+
+###
+
+GET http://localhost:3000/api/v1/dashboard/books_borrowed
+Accept: application/json
+Authorization: Bearer {token}
+
+###

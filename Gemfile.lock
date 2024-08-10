@@ -116,6 +116,10 @@ GEM
       warden-jwt_auth (~> 0.10)
     diff-lcs (1.5.1)
     docile (1.4.1)
+    dotenv (3.1.2)
+    dotenv-rails (3.1.2)
+      dotenv (= 3.1.2)
+      railties (>= 6.1)
     drb (2.2.1)
     dry-auto_inject (1.0.1)
       dry-core (~> 1.0)
@@ -132,6 +136,8 @@ GEM
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
+    faker (3.4.2)
+      i18n (>= 1.8.11, < 2)
     faraday (2.9.2)
       faraday-net_http (>= 2.0, < 3.2)
     faraday-net_http (3.1.0)
@@ -381,7 +387,9 @@ DEPENDENCIES
   devise-argon2 (~> 2.0)
   devise-i18n (~> 1.12)
   devise-jwt (~> 0.12.1)
+  dotenv-rails
   factory_bot_rails
+  faker
   fuubar
   opensearch-ruby
   parallel_tests

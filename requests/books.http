@@ -1,0 +1,55 @@
+GET http://localhost:3000/api/v1/books
+Accept: application/json
+Authorization: Bearer {token}
+
+
+###
+
+GET http://localhost:3000/api/v1/books?q=Death
+Accept: application/json
+Authorization: Bearer {token}
+
+
+###
+
+GET http://localhost:3000/api/v1/books/1
+Accept: application/json
+Authorization: Bearer {token}
+
+
+###
+
+POST http://localhost:3000/api/v1/books
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+{
+  "book": {
+    "title": "Alien",
+    "genre": "Horror",
+    "author": "Dean Foster",
+    "isbn": "1234567910",
+    "total_copies": 10
+  }
+}
+
+###
+
+PATCH http://localhost:3000/api/v1/books/1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {token}
+
+{
+  "book": {
+    "title": "Alien UPDATED"
+  }
+}
+
+###
+
+DELETE http://localhost:3000/api/v1/books/1
+Accept: application/json
+Authorization: Bearer {token}
+
