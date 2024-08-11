@@ -25,6 +25,13 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 gem "apipie-rails", "~> 1.4"
 gem "pagy", "~> 9.0"
 
+gem 'sass-rails', '>= 6'
+gem 'webpacker'
+gem 'turbo-rails'
+gem 'stimulus-rails'
+gem 'sprockets-rails'
+gem 'importmap-rails'
+
 group :development, :test do
   gem 'byebug'
   gem 'debug', platforms: %i[mri windows]

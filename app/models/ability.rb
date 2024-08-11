@@ -8,6 +8,7 @@ class Ability
     return if user.blank?
 
     can :manage, User, id: user.id
+    can :index, :dashboard
     if user.librarian?
       can :manage, Book
       can :manage, Borrow

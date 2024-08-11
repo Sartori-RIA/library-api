@@ -1,0 +1,17 @@
+<%= form_with(model: borrow) do |form| %>
+  <% if borrow.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(borrow.errors.count, "error") %> prohibited this borrow from being saved:</h2>
+
+      <ul>
+        <% borrow.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

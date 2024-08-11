@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Api::V1::BooksController < ApplicationController
+class Api::V1::BooksController < Api::ApplicationController
   load_and_authorize_resource
 
   def_param_group :book do

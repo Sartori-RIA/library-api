@@ -163,6 +163,10 @@ GEM
     hashie (5.0.0)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
+    importmap-rails (2.0.1)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.7.2)
     irb (1.14.0)
       rdoc (>= 4.0.0)
@@ -232,6 +236,8 @@ GEM
       rack (>= 1.0, < 4)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
+    rack-proxy (0.7.7)
+      rack
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -330,9 +336,20 @@ GEM
       rubocop (~> 1.61)
       rubocop-rspec (~> 3, >= 3.0.1)
     ruby-progressbar (1.13.0)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     searchkick (5.3.1)
       activemodel (>= 6.1)
       hashie
+    semantic_range (3.0.0)
     shoulda-matchers (6.2.0)
       activesupport (>= 5.2.0)
     sidekiq (7.3.0)
@@ -351,12 +368,26 @@ GEM
       terminal-table
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
+    sprockets (4.2.1)
+      concurrent-ruby (~> 1.0)
+      rack (>= 2.2.4, < 4)
+    sprockets-rails (3.5.2)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      sprockets (>= 3.0.0)
+    stimulus-rails (1.3.3)
+      railties (>= 6.0.0)
     stringio (3.1.1)
     strscan (3.1.0)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     thor (1.3.1)
+    tilt (2.4.0)
     timeout (0.4.1)
+    turbo-rails (2.0.6)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
@@ -368,6 +399,11 @@ GEM
       dry-configurable (>= 0.13, < 2)
       jwt (~> 2.1)
       warden (~> 1.2)
+    webpacker (5.4.4)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     webrick (1.8.1)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -398,6 +434,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   fuubar
+  importmap-rails
   opensearch-ruby
   pagy (~> 9.0)
   parallel_tests
@@ -414,12 +451,17 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   rubocop-rspec_rails
+  sass-rails (>= 6)
   searchkick
   shoulda-matchers
   sidekiq (~> 7.3)
   simplecov
   simplecov-console
+  sprockets-rails
+  stimulus-rails
+  turbo-rails
   tzinfo-data
+  webpacker
 
 RUBY VERSION
    ruby 3.2.2p53

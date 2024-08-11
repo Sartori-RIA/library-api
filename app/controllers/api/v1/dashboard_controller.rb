@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Api::V1::DashboardController < ApplicationController
+class Api::V1::DashboardController < Api::ApplicationController
   authorize_resource class: false
 
   api!
