@@ -28,7 +28,7 @@ RSpec.describe Api::V1::DashboardController, type: :request do
   describe '#GET total_borrowed_books' do
     context 'when is a librarian' do
       it 'can access successfully' do
-        list = create_list(:borrow, 5)
+        list = create_list(:borrow, 5, status: :on_date)
         get total_borrowed_books_api_v1_dashboard_index_url, headers: librarian_headers
         expect(response).to have_http_status(:ok)
         expect(response.parsed_body).to eq({ 'total' => list.size })

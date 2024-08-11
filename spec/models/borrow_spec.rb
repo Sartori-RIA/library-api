@@ -10,6 +10,8 @@ RSpec.describe Borrow, type: :model do
   end
 
   describe '#validates' do
+    it { is_expected.to define_enum_for(:status).with_values(on_date: 0, returned: 1, expired: 2) }
+
     it '#check_availability?' do
 
     end

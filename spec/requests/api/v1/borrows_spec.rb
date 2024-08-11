@@ -102,23 +102,23 @@ RSpec.describe Api::V1::BorrowsController, type: :request do
 
     context 'with valid parameters' do
       let(:new_attributes) do
-        { returned: true }
+        { status: :returned }
       end
 
       it 'updates the requested borrow' do
-        borrow = create(:borrow, returned: false)
+        borrow = create(:borrow, status: :on_date)
         patch api_v1_borrow_url(borrow), params: { borrow: new_attributes }, headers: librarian_headers, as: :json
         borrow.reload
         expect(response).to have_http_status(:ok)
         expect(response.content_type).to match(a_string_including('application/json'))
-        expect(borrow.returned).to be_truthy
+        expect(borrow.status).to eq('returned')
       end
     end
 
     context 'with invalid parameters' do
       it 'renders a JSON response with errors for the borrow' do
         patch api_v1_borrow_url(borrow),
-              params: { borrow: { returned: 'yes' } }, headers: librarian_headers, as: :json
+              params: { borrow: { status: -1 } }, headers: librarian_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to match(a_string_including('application/json'))
       end

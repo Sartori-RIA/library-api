@@ -3,8 +3,7 @@ FactoryBot.define do
     book
     user
     end_date { 2.weeks.from_now }
-    returned { false }
-    expired { false }
+    status { Borrow.statuses.keys.sample }
     trait :as_expired do
       created_at { 1.month.ago }
     end
