@@ -1,0 +1,10 @@
+:concurrency: 5
+:max_retries: 1
+:queues:
+  - default
+  - mailers
+
+:schedule:
+  expire_borrows_job:
+    cron: "0 0 * * *"
+    class: "ExpireBorrowsJob"

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
+  include CanCan::ControllerAdditions
   include Pagy::Backend
 
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -14,8 +15,8 @@ class ApplicationController < ActionController::API
     render json: { message: e.message }, status: :unprocessable_entity
   end
 
-  def pagy_render(collection, vars = {})
-    pagy, records = pagy(collection, vars)
+  def pagy_render(collection, **vars)
+    pagy, records = pagy(collection, **vars)
     pagy_headers_merge(pagy)
     render json: records
   end

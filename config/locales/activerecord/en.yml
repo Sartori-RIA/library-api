@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    errors:
+      model:
+        book:
+          attributes:
+            isbn:
+              invalid: 'Must be 10 or 13 digits'

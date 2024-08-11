@@ -24,7 +24,6 @@ module Rack
 
     # Limitar tentativas de login a 5 por 20 minutos por conta de e-mail
     throttle('logins/email', limit: 5, period: 20.minutes) do |req|
-      puts req.params
       req.params.dig('user', 'email').presence if req.path == '/users/sign_in' && req.post?
     end
 

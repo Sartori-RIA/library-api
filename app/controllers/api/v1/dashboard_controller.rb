@@ -11,7 +11,7 @@ class Api::V1::DashboardController < ApplicationController
 
   def total_borrowed_books
     authorize! :total_borrowed_books, :dashboard
-    @total = Book.total_borrowed
+    @total = Borrow.total_borrowed
     render json: { total: @total }, status: :ok
   end
 

@@ -19,10 +19,12 @@ class Borrow < ApplicationRecord
   }
 
   scope :member_due_dates, lambda { |user_id|
-    where(user_id:).where.not(end_date: today.beginning_of_day).order(end_date: :desc, expired: :desc)
+    where(user_id:).where.not(end_date: DateTime.now.beginning_of_day).order(end_date: :desc, expired: :desc)
   }
 
   scope :total_borrowed, -> { where(returned: false).count }
+
+  scope :to_expire, -> { where('end_date < ?', DateTime.now.beginning_of_day).where(returned: false, expired: false) }
 
   private
 
@@ -31,7 +33,7 @@ class Borrow < ApplicationRecord
   end
 
   def check_availability?
-    copies = book&.total_copies
+    copies = book&.total_copies.presence || 0
     not_available = Borrow.joins(:book).where(book:, returned: false).count
     copies > not_available
   end

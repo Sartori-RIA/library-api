@@ -2,10 +2,10 @@
 
 FactoryBot.define do
   factory :book do
-    title { 'MyString' }
-    author { 'MyString' }
-    genre { 'MyString' }
-    isbn { 'MyString' }
-    total_copies { 1 }
+    title { Faker::Book.title }
+    author { Faker::Book.author }
+    genre { Faker::Book.genre }
+    isbn { Faker::Code.isbn(base: 13).gsub('-', '') }
+    total_copies { rand(1..10) }
   end
 end

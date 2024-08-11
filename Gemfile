@@ -22,8 +22,11 @@ gem 'redis', '~> 5.2'
 gem 'searchkick'
 gem 'sidekiq', '~> 7.3'
 gem 'tzinfo-data', platforms: %i[windows jruby]
+gem "apipie-rails", "~> 1.4"
+gem "pagy", "~> 9.0"
 
 group :development, :test do
+  gem 'byebug'
   gem 'debug', platforms: %i[mri windows]
   gem 'factory_bot_rails'
   gem 'faker'
@@ -44,7 +47,3 @@ group :test do
   gem 'simplecov'
   gem 'simplecov-console'
 end
-
-gem "apipie-rails", "~> 1.4"
-
-gem "pagy", "~> 9.0"

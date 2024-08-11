@@ -15,3 +15,5 @@ Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+RSpec/NestedGroups:
+  MaxNesting: 4

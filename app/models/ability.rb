@@ -15,9 +15,10 @@ class Ability
       can :total_borrowed_books, :dashboard
       can :books_due_today, :dashboard
       can :overdue_books, :dashboard
+      can :due_dates, :dashboard
     elsif user.member?
-      can :index, Book
-      can :index, Borrow, user_id: user.id
+      can :read, Book
+      can :read, Borrow, user_id: user.id
       can :books_borrowed, :dashboard
       can :due_dates, :dashboard
     end

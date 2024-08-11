@@ -10,4 +10,4 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create_with(name: 'Admin', password: '123456').find_or_create_by(email: 'admin@email.com')
+User.create_with(name: 'Admin', password: '123456', role: :librarian).find_or_create_by(email: 'admin@email.com')

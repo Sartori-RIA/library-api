@@ -1,6 +1,7 @@
 GET http://localhost:3000/api/v1/books
 Accept: application/json
-Authorization: Bearer {token}
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNzIzMzc3MTE5LCJleHAiOjE3MjM0NjM1MTksImp0aSI6IjFmYjFiYmNhLThlNWMtNDE4YS04ZmRkLTRkNTJjMTBmNDg4ZSJ9.WZSkHlCSIfvV3S206jLnlXKZYB_Y3rbCgu1yJmcpcqA
+
 
 
 ###
