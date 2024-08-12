@@ -19,6 +19,9 @@
 * Documentation for the endpoints
   * `http://localhost:3000/apipie`
 
+* HTTP files with examples for the requests
+  * `requests/*.http`
+
 * How to run the test suite
   * `docker exec library_app bundle exec rspec`
   * `docker exec library_app bundle exec parallel:spec`
@@ -26,4 +29,6 @@
 * Services (job queues, cache servers, search engines, etc.)
   * Postgres
   * Sidekiq
+    * `http://localhost:3000/sidekiq`
   * OpenSearch
+    * `http://localhost:9200`

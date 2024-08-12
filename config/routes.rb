@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   apipie
   devise_for :users, path: 'auth'
+  mount Sidekiq::Web => '/sidekiq'
 
   get 'home/index'
-  root "home#index"
+  root 'home#index'
   get '/dashboard' => 'dashboard#index'
   resources :books
   resources :borrows

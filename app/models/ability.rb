@@ -10,6 +10,7 @@ class Ability
     can :manage, User, id: user.id
     can :index, :dashboard
     if user.librarian?
+      can :read, User
       can :manage, Book
       can :manage, Borrow
       can :total_books, :dashboard

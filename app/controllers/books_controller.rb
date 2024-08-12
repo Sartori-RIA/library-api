@@ -3,7 +3,10 @@
 class BooksController < ApplicationController
   load_and_authorize_resource
 
-  def index; end
+  def index
+    @books = Book.search(params[:q], fields: Book::FIELDS_TO_SEARCH) if params[:q].present?
+    @pagy, @books = pagy(@books)
+  end
 
   def show; end
 
@@ -37,6 +40,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.fetch(:book, {})
+    params.require(:book).permit(:title, :author, :isbn, :total_copies, :genre)
   end
 end

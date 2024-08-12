@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @borrow %>
+<p>
+  <strong>Book</strong>: <%= @borrow.book.title %> <br>
+  <strong>Borrowed at</strong>: <%= @borrow.created_at %> <br>
+  <strong>End date</strong>: <%= @borrow.end_date %> <br>
+  <strong>status</strong>:  <%= tag.span @borrow.status, class: badge(@borrow) %>
+</p>
 
 <div>
-  <%= link_to "Edit this borrow", edit_borrow_path(@borrow) %> |
-  <%= link_to "Back to borrows", borrows_path %>
+  <% if can? :edit, @borrow %>
+    <%= link_to "Edit this borrow", edit_borrow_path(@borrow), class: 'btn btn-link' %> |
+  <% end %>
+  <%= link_to "Back to borrow", borrows_path, class: 'btn btn-link' %>
 
-  <%= button_to "Destroy this borrow", @borrow, method: :delete %>
+  <% if can? :destroy, @borrow %>
+    <%= button_to "Destroy this borrow", @borrow, method: :delete, class: 'btn btn-danger' %>
+  <% end %>
 </div>

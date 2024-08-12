@@ -3,7 +3,6 @@
 class ApplicationController < ActionController::Base
   include CanCan::ControllerAdditions
   include Pagy::Backend
-  include Pagy::Frontend
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
