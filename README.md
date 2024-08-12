@@ -34,3 +34,30 @@
     * `http://localhost:3000/sidekiq`
   * OpenSearch
     * `http://localhost:9200`
+
+### Libs
+* For Security
+  * Devise
+  * Devise-JWT
+  * Devise-argon2
+  * Cancancan
+  * Rack-cors
+  * Rack-attack
+* For search and background jobs
+  * Searchkick
+  * Opensearch
+  * Redis
+  * Sidekiq
+* For pagination
+  * Pagy
+* For the documentation
+  * ApiPie
+* For testing
+  * Rspec
+  * Factory_bot
+  * shoulda_matchers
+  * parallel_test
+  * fuubar
+  * simplecov
+* Code Style
+  * rubocop
