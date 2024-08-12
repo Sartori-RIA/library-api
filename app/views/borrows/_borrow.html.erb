@@ -1,0 +1,18 @@
+<tr id="<%= dom_id borrow %>">
+  <td><%= borrow.book.title %></td>
+  <td><%= borrow.user.name %></td>
+  <td>
+    <%= tag.h2 borrow.status, class: badge(borrow) %>
+  </td>
+  <td><%= borrow.created_at %></td>
+  <td><%= borrow.end_date %></td>
+  <td>
+    <%= link_to borrow_path(borrow), class: 'btn btn-link' do %>
+      <i class="fa-regular fa-eye"></i>
+    <% end %>
+    &nbsp;
+    <%= link_to edit_borrow_path(borrow), class: 'btn btn-link' do %>
+      <i class="fa-regular fa-pen-to-square"></i>
+    <% end %>
+  </td>
+</tr>

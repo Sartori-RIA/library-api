@@ -1,0 +1,47 @@
+<div style="display: flex; align-items: center; justify-content: space-around" class="pt-3">
+  <% if can? :total_books, :dashboard %>
+    <div class="card" style="width: 15em; text-align: center">
+      <div class="card-title">
+        <strong>Total of Books</strong>
+      </div>
+      <div class="card-body">
+        <%= @total_books %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if can? :total_borrowed_books, :dashboard %>
+    <div class="card" style="width: 15em; text-align: center">
+      <div class="card-title">
+        <strong>Total of Borrowed Books</strong>
+      </div>
+      <div class="card-body">
+        <%= @total_borrowed_books %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<% if can? :books_due_today, :dashboard %>
+  <%= render partial: 'books_due_today' %>
+<% end %>
+
+<br>
+
+<% if can? :overdue_books, :dashboard %>
+  <%= render partial: 'overdue_books' %>
+<% end %>
+
+<br>
+
+<% if can? :due_dates, :dashboard %>
+  <%= render partial: 'due_dates' %>
+<% end %>
+
+<br>
+
+<% if can? :books_borrowed, :dashboard %>
+  <%= render partial: 'books_borrowed' %>
+<% end %>

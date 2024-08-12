@@ -2,17 +2,19 @@
 
 require 'rails_helper'
 
-RSpec.describe Api::V1::BorrowsController, type: :request do
+RSpec.describe Api::V1::BorrowsController do
   let(:member_user) { create(:user, role: :member) }
   let(:librarian_user) { create(:user, role: :librarian) }
   let(:member_headers) { auth_header(member_user) }
   let(:librarian_headers) { auth_header(librarian_user) }
   let(:invalid_attributes) { { book_id: -1 } }
   let!(:borrow) { create(:borrow) }
-  let(:valid_attributes) { {
-    user_id: create(:user).id,
-    book_id: create(:book).id
-  } }
+  let(:valid_attributes) do
+    {
+      user_id: create(:user).id,
+      book_id: create(:book).id
+    }
+  end
 
   describe 'GET /index' do
     context 'as librarian' do
@@ -21,6 +23,7 @@ RSpec.describe Api::V1::BorrowsController, type: :request do
         expect(response).to have_http_status(:ok)
       end
     end
+
     context 'as member' do
       it 'renders a successful response' do
         get api_v1_borrows_path, headers: member_headers, as: :json
@@ -38,6 +41,7 @@ RSpec.describe Api::V1::BorrowsController, type: :request do
         expect(response.parsed_body[:id]).to eq borrow.id
       end
     end
+
     context 'as member' do
       it 'renders a successful response' do
         borrow = create(:borrow, user: member_user)
@@ -59,6 +63,7 @@ RSpec.describe Api::V1::BorrowsController, type: :request do
         expect(response).to have_http_status(:forbidden)
       end
     end
+
     context 'with valid parameters' do
       it 'creates a new Borrow' do
         expect do

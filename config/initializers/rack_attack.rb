@@ -5,7 +5,7 @@ module Rack
   class Attack
     # Permitir tráfego local
     safelist('allow-localhost') do |req|
-      %w[127.0.0.1 ::1].include? req.ip
+      %w[app library_app 127.0.0.1 ::1].include? req.ip
     end
 
     # Bloquear tráfego de um IP específico

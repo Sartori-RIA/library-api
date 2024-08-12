@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Api::V1::DashboardController < ApplicationController
+class Api::V1::DashboardController < Api::ApplicationController
   authorize_resource class: false
 
   api!
@@ -45,7 +45,7 @@ class Api::V1::DashboardController < ApplicationController
   api!
   def books_borrowed
     authorize! :books_borrowed, :dashboard
-    @books = current_user.books
+    @books = current_user.borrows
     render json: @books, status: :ok
   end
 end

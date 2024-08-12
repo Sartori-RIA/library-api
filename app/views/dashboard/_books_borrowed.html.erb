@@ -1,0 +1,22 @@
+<div class="card" style=" text-align: center">
+  <div class="card-title">
+    <h4>Books Borrowed</h4>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover table-striped">
+      <thead>
+      <tr>
+        <th>Book</th>
+        <th>User</th>
+        <th>Status</th>
+        <th>Borrowed at:</th>
+        <th>End date at:</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <%= render @books_borrowed %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -23,9 +23,9 @@ RSpec.describe Book do
     it { is_expected.to allow_value('1234567890', '1234567890123').for(:isbn) }
 
     it {
-      is_expected.to_not allow_value('123', 'abc1234567', '12345678901', '12345678901234')
-                       .for(:isbn)
-                       .with_message(I18n.t('activerecord.errors.model.book.attributes.isbn.invalid'))
+      expect(subject).not_to allow_value('123', 'abc1234567', '12345678901', '12345678901234')
+        .for(:isbn)
+        .with_message(I18n.t('activerecord.errors.model.book.attributes.isbn.invalid'))
     }
   end
 end

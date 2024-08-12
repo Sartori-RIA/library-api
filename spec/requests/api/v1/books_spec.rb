@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Api::V1::BooksController, type: :request do
+RSpec.describe Api::V1::BooksController do
   let(:member_user) { create(:user, role: :member) }
   let(:librarian_user) { create(:user, role: :librarian) }
   let(:member_headers) { auth_header(member_user) }
@@ -17,6 +17,7 @@ RSpec.describe Api::V1::BooksController, type: :request do
         expect(response).to have_http_status(:ok)
       end
     end
+
     context 'when is a member' do
       it 'renders a successful response' do
         get api_v1_books_url, headers: member_headers, as: :json
@@ -32,6 +33,7 @@ RSpec.describe Api::V1::BooksController, type: :request do
         expect(response).to have_http_status(:ok)
       end
     end
+
     context 'when is a librarian' do
       it 'renders a successful response' do
         get api_v1_book_url(book), as: :json, headers: librarian_headers
@@ -47,6 +49,7 @@ RSpec.describe Api::V1::BooksController, type: :request do
         expect(response).to have_http_status(:forbidden)
       end
     end
+
     context 'with valid parameters' do
       it 'creates a new Book' do
         expect do
@@ -87,8 +90,10 @@ RSpec.describe Api::V1::BooksController, type: :request do
         expect(response).to have_http_status(:forbidden)
       end
     end
+
     context 'with valid parameters' do
       let(:new_attributes) { attributes_for(:book) }
+
       it 'updates the requested book' do
         patch api_v1_book_url(book),
               params: { book: new_attributes }, headers: librarian_headers, as: :json

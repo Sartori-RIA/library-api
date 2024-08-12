@@ -1,0 +1,11 @@
+en:
+  flash:
+    models:
+      book:
+        created: "Book was successfully created."
+        updated: "Book was successfully updated."
+        deleted: "Book was successfully destroyed."
+      borrow:
+        created: "Borrow was successfully created."
+        updated: "Borrow was successfully updated."
+        deleted: "Borrow was successfully destroyed."

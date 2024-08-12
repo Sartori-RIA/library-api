@@ -1,0 +1,6 @@
+<%= form_with url: url, method: :get, local: true, class: "d-flex p-3" do %>
+  <%= text_field_tag :q, params[:q], class: "form-control me-2", placeholder: "Search..." %>
+  <%= button_tag(type: 'submit', class: "btn btn-outline-success") do %>
+    <i class="fa-solid fa-magnifying-glass"></i>
+  <% end %>
+<% end %>

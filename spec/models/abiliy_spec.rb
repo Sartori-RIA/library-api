@@ -9,6 +9,7 @@ RSpec.describe Ability, type: :ability do
   describe 'abilities' do
     context 'when is a librarian' do
       subject { described_class.new(librarian) }
+
       context 'can' do
         it { is_expected.to be_able_to(:manage, User.new(id: librarian.id)) }
         it { is_expected.to be_able_to(:manage, Book.new) }
@@ -33,8 +34,8 @@ RSpec.describe Ability, type: :ability do
       end
 
       context 'cannot' do
-        it { is_expected.to_not be_able_to(:manage, Book.new) }
-        it { is_expected.to_not be_able_to(:manage, Borrow.new) }
+        it { is_expected.not_to be_able_to(:manage, Book.new) }
+        it { is_expected.not_to be_able_to(:manage, Borrow.new) }
       end
     end
   end

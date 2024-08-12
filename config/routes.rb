@@ -1,20 +1,28 @@
 # frozen_string_literal: true
 
-Rails.application.routes.draw do
-  apipie
-  devise_for :users,
-             defaults: { format: :json },
-             controllers: {
-               sessions: 'users/sessions',
-               registrations: 'users/registrations'
-             }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+require 'sidekiq/web'
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
+  apipie
+  devise_for :users, path: 'auth'
+  mount Sidekiq::Web => '/sidekiq'
+
+  get 'home/index'
+  root 'home#index'
+  get '/dashboard' => 'dashboard#index'
+  resources :books
+  resources :borrows
+
   namespace :api do
+    devise_for :users,
+               path: 'auth',
+               defaults: { format: :json },
+               controllers: {
+                 sessions: 'api/sessions',
+                 registrations: 'api/registrations'
+               }
     namespace :v1 do
       resources :books
       resources :borrows, except: [:destroy]

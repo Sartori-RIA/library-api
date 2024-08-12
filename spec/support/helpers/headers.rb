@@ -16,4 +16,3 @@ end
 RSpec.configure do |config|
   config.include Helpers::Headers
 end
-

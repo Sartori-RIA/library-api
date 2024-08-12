@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Api::V1::BorrowsController < ApplicationController
+class Api::V1::BorrowsController < Api::ApplicationController
   load_and_authorize_resource
 
   def_param_group :borrow do
