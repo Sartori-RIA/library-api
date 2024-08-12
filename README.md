@@ -1,12 +1,14 @@
 # Library API
 
 * Ruby version 3.2.2
+* Ruby on Rails 7.1
 
 * System dependencies
   * Docker
   * Docker Compose
 
 * Configuration
+  * `cp .env.example .env` <- to copy the env file
   * `docker compose up --build` <- for the first time
   * `docker compose up -d` <- after the first time
 

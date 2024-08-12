@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
+gem 'apipie-rails', '~> 1.4'
 gem 'bootsnap', require: false
 gem 'cancancan'
 gem 'devise', '~> 4.9'
@@ -12,6 +13,7 @@ gem 'devise-i18n', '~> 1.12'
 gem 'devise-jwt', '~> 0.12.1'
 gem 'dotenv-rails'
 gem 'opensearch-ruby' # select one
+gem 'pagy', '~> 9.0'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rack-attack'
@@ -22,15 +24,11 @@ gem 'redis', '~> 5.2'
 gem 'searchkick'
 gem 'sidekiq', '~> 7.3'
 gem 'tzinfo-data', platforms: %i[windows jruby]
-gem "apipie-rails", "~> 1.4"
-gem "pagy", "~> 9.0"
 
-gem 'sass-rails', '>= 6'
-gem 'webpacker'
-gem 'turbo-rails'
-gem 'stimulus-rails'
-gem 'sprockets-rails'
 gem 'importmap-rails'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
+gem 'turbo-rails'
 
 group :development, :test do
   gem 'byebug'

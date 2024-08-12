@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Api::V1::DashboardController, type: :request do
+RSpec.describe Api::V1::DashboardController do
   let(:member_user) { create(:user, role: :member) }
   let(:librarian_user) { create(:user, role: :librarian) }
   let(:member_headers) { auth_header(member_user) }
@@ -17,6 +17,7 @@ RSpec.describe Api::V1::DashboardController, type: :request do
         expect(response.parsed_body).to eq({ 'total' => list.size })
       end
     end
+
     context 'when is a member' do
       it 'not allow a member to access' do
         get total_books_api_v1_dashboard_index_url, headers: member_headers
@@ -59,6 +60,7 @@ RSpec.describe Api::V1::DashboardController, type: :request do
         expect(response).to have_http_status(:ok)
       end
     end
+
     context 'when is a member' do
       it 'cannot access this endpoint' do
         get overdue_books_api_v1_dashboard_index_url, headers: member_headers

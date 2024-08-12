@@ -13,7 +13,7 @@ namespace :db do
         author: Faker::Book.author,
         genre: Faker::Book.genre,
         total_copies: rand(1..10),
-        isbn: isbn
+        isbn:
       )
       unless book.save
         puts isbn
@@ -32,7 +32,7 @@ namespace :db do
     60.times do
       user = User.all.sample
       book = Book.all.sample
-      Borrow.where(user:, book:, status: Borrow.statuses.sample.key).first_or_create
+      Borrow.where(user:, book:, status: Borrow.statuses.keys.sample).first_or_create
     end
 
     [

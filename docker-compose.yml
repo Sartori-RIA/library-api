@@ -112,25 +112,22 @@ services:
     networks:
       - opensearch-net
 
-#  app:
-#    container_name: library_app
-#    build: .
-#    platform: linux/x86_64
-#    volumes:
-#      - .:/rails
-##    command: bash -c "bundle exec rails db:create && bundle exec rails db:migrate && bundle exec rails db:seed &&  bundle exec rails db:populate"
-#    depends_on:
-#      - db
-#      - mailcatcher
-#      - cache
-#      - opensearch-node1
-#      - opensearch-node2
-#    env_file:
-#      - .env
-#    ports:
-#      - 3000:3000
-#    networks:
-#      - opensearch-net
+  app:
+    container_name: library_app
+    build: .
+    platform: linux/x86_64
+    volumes:
+      - .:/rails
+    depends_on:
+      - db
+      - mailcatcher
+      - cache
+      - opensearch-node1
+      - opensearch-node2
+    ports:
+      - 3000:3000
+    networks:
+      - opensearch-net
 
 volumes:
   opensearch-data1:

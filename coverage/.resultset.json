@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/models/ability.rb": {
+      "/rails/app/models/ability.rb": {
         "lines": [
           null,
           null,
@@ -33,7 +33,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/models/book.rb": {
+      "/rails/app/models/book.rb": {
         "lines": [
           null,
           null,
@@ -50,7 +50,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/models/borrow.rb": {
+      "/rails/app/models/borrow.rb": {
         "lines": [
           null,
           null,
@@ -100,7 +100,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/api/v1/books_controller.rb": {
+      "/rails/app/controllers/api/v1/books_controller.rb": {
         "lines": [
           null,
           null,
@@ -202,7 +202,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/api/application_controller.rb": {
+      "/rails/app/controllers/api/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -236,7 +236,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/api/v1/borrows_controller.rb": {
+      "/rails/app/controllers/api/v1/borrows_controller.rb": {
         "lines": [
           null,
           null,
@@ -335,7 +335,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/api/v1/dashboard_controller.rb": {
+      "/rails/app/controllers/api/v1/dashboard_controller.rb": {
         "lines": [
           null,
           null,
@@ -390,7 +390,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/sidekiq/expire_borrows_job.rb": {
+      "/rails/app/sidekiq/expire_borrows_job.rb": {
         "lines": [
           null,
           null,
@@ -403,7 +403,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/models/allowlisted_jwt.rb": {
+      "/rails/app/models/allowlisted_jwt.rb": {
         "lines": [
           null,
           null,
@@ -412,7 +412,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/application_controller.rb": {
+      "/rails/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -435,7 +435,7 @@
           null
         ]
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/channels/application_cable/channel.rb": {
+      "/rails/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -447,7 +447,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/channels/application_cable/connection.rb": {
+      "/rails/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -459,29 +459,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/api/registrations_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/api/sessions_controller.rb": {
+      "/rails/app/controllers/api/registrations_controller.rb": {
         "lines": [
           null,
           null,
@@ -498,6 +476,28 @@
           0,
           0,
           0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/rails/app/controllers/api/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           0,
           null,
@@ -517,7 +517,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/books_controller.rb": {
+      "/rails/app/controllers/books_controller.rb": {
         "lines": [
           null,
           null,
@@ -568,7 +568,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/borrows_controller.rb": {
+      "/rails/app/controllers/borrows_controller.rb": {
         "lines": [
           null,
           null,
@@ -625,7 +625,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/dashboard_controller.rb": {
+      "/rails/app/controllers/dashboard_controller.rb": {
         "lines": [
           null,
           null,
@@ -688,7 +688,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/controllers/home_controller.rb": {
+      "/rails/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -699,7 +699,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/helpers/application_helper.rb": {
+      "/rails/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -710,7 +710,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/helpers/borrows_helper.rb": {
+      "/rails/app/helpers/borrows_helper.rb": {
         "lines": [
           null,
           null,
@@ -728,7 +728,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/jobs/application_job.rb": {
+      "/rails/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -743,7 +743,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/mailers/application_mailer.rb": {
+      "/rails/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -755,7 +755,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/models/application_record.rb": {
+      "/rails/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -766,7 +766,7 @@
         "branches": {
         }
       },
-      "/Users/sartori/Sites/testes/ballast_lane/libray/app/models/user.rb": {
+      "/rails/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -792,6 +792,6 @@
         }
       }
     },
-    "timestamp": 1723429516
+    "timestamp": 1723436288
   }
 }
