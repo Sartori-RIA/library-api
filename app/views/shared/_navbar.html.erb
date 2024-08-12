@@ -12,9 +12,7 @@
     <div class="d-flex">
 
       <% if user_signed_in? %>
-        <%= link_to "Sign Out", destroy_user_session_path(action: :delete),
-                    class: 'btn btn-link',
-                    data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-link' %>
       <% else %>
         <%= link_to "Sign In", new_user_session_path, class: 'btn btn-link' %>
       <% end %>
