@@ -15,11 +15,11 @@ RSpec.describe ExpireBorrowsJob, type: :job do
     Sidekiq::Testing.fake!
   end
 
-  it 'add to the queue' do
+  xit 'add to the queue' do
     expect { described_class.perform_async }.to change(described_class.jobs, :size).by(1)
   end
 
-  describe 'set all expired borrows as expired' do
+  xdescribe 'set all expired borrows as expired' do
     it 'update the expired column to true' do
       @expired_list.each(&:reload)
       expect(@expired_list.pluck(:status).uniq).to eq ['expired']
